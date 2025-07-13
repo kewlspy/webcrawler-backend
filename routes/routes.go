@@ -11,5 +11,8 @@ func RegisterRoutes(router *gin.Engine) {
 		api.POST("/urls", controllers.SubmitURL)
 		api.GET("/urls", controllers.GetAllURLs)
 		api.GET("/urls/:id", controllers.GetURLDetails)
+		api.POST("/urls/:id/retry", controllers.RetryCrawl)
+		api.DELETE("/urls/:id", controllers.DeleteURL)
+
 	}
 }

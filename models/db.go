@@ -16,10 +16,9 @@ func ConnectDB() {
 		log.Fatalf("Failed to connect to DB: %v", err)
 	}
 
-	DB = database // ✅ assign to global variable
+	DB = database
 
-	// Auto-migrate your models
-	err = DB.AutoMigrate(&URL{}, &BrokenLink{}) // Replace with your model(s)
+	err = DB.AutoMigrate(&URL{}, &BrokenLink{})
 	if err != nil {
 		log.Fatalf("Auto migration failed: %v", err)
 	}
